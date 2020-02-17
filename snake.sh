@@ -95,6 +95,7 @@ playerCurrentPosition
 position=$?
 player1=$((position-diceNumber))
 
+
 echo "player1 is at position:$player1"
 fi
 }
@@ -110,11 +111,24 @@ checkOption
 fi
 echo ""
 done
-
 if((player1>=100))
 then
 	echo "Player1 wins the game"
 fi
+}
+checkOption
+
+
+
+if((player1>100))
+then
+	player1=$((player1-diceNumber))
+elif((player1==100))
+then
+echo "Player1 won the game"
+fi
+done
+
 }
 checkOption
 
