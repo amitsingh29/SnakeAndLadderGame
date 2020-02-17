@@ -46,3 +46,7 @@ board
 player1=0
 echo "player1's intial position is:$player1 th position"
 
+
+diceRoll=$(((RANDOM%6)+1))
+echo "number appeared on Dice is :$diceRoll"
+
