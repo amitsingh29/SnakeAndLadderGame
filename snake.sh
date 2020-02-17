@@ -68,6 +68,8 @@ diceRoll=$(((RANDOM%6)+1))
 
 checkOption()
 {
+while((player1<100))
+do
 result=$((RANDOM%3))
 if((result==0))
 then
@@ -79,6 +81,8 @@ then
 echo "Ladder"
 diceValue
 diceNumber=$?
+echo "Dice Roll:$diceNumber"
+
 playerCurrentPosition
 position=$?
 player1=$((position+diceNumber))
@@ -90,7 +94,27 @@ diceNumber=$?
 playerCurrentPosition
 position=$?
 player1=$((position-diceNumber))
+
 echo "player1 is at position:$player1"
 fi
 }
 checkOption
+
+  if((player1<0))
+  then
+	player1=0
+	echo "player1 is at position:$player1"
+  else
+	echo "player1 is at position:$player1"
+  fi
+fi
+echo ""
+done
+
+if((player1>=100))
+then
+	echo "Player1 wins the game"
+fi
+}
+checkOption
+
